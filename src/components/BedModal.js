@@ -1,10 +1,17 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import axios from "../utils/axiosInstance"
 
 export  const BedModal = (props) => {
+
+  const [patDetails, setPatDetails] = React.useState();
+
+  React.useEffect(() => {
+    axios.get(`getPatient/${props.hid}`)
+    .then((res) => setPatDetails(res.data))
+  })
 
     const style = {
       position: 'absolute',
@@ -28,10 +35,15 @@ export  const BedModal = (props) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            <b>{patDetails?.fname+" "+patDetails?.lname}</b>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+            <p>Hospital ID: {patDetails?.hid}</p>
+            <p>Gender: {patDetails?.gender}</p>
+            <p>DOB: {patDetails?.dob}</p>
+            <p>Father's Name: {patDetails?.father_name}</p>
+            <p>City: {patDetails?.city}</p>
           </Typography>
         </Box>
       </Modal>
