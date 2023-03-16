@@ -13,7 +13,7 @@ const WardCombo = (props) => {
 
     useEffect(() => {
         getWards();
-    },[props.deptId, props.unitId])
+    },[props.deptId, props.unitId, props.renderFlag])
 
     const wardHandler = (event) => {
       props.setWardId(event.target.value)

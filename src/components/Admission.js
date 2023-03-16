@@ -17,7 +17,7 @@ const Admission = () => {
 
   const location = useLocation();
 
-  const {hid, fname, lname, dob, gender, phone, email, city} = location.state.r;
+  const {hid, fname, lname, dob, gender, phone, email, city, patStatus} = location.state.r;
 
   const saveAdm = () => {
     const payload = {
@@ -37,6 +37,8 @@ const Admission = () => {
         window.alert("failed to admit")
       }
     })
+
+    axios.post("updateBed", bedId);
   }
 
   return (
@@ -49,14 +51,14 @@ const Admission = () => {
         <p>Phone: {phone}</p>
         <p>Email: {email}</p>
         <p>City: {city}</p>
-        <DepartmentCombo setDeptId={setDeptId} setDeptName={setDeptName}/>
+        {patStatus==="OPD" && <><DepartmentCombo setDeptId={setDeptId} setDeptName={setDeptName}/>
         <UnitCombo deptId={deptId} setDeptId={setDeptId} setUnitId={setUnitId}/>
         <WardCombo deptId={deptId} setDeptId={setDeptId} unitId={unitId} setUnitId={setUnitId} setWardId={setWardId}/>
         <BedCombo deptId={deptId} unitId={unitId} wardId={wardId} setBedId={setBedId}/>
         <br/>
         <Button variant="contained" color="success" onClick={saveAdm}>
           Save
-        </Button>
+        </Button></>}
     </div>
   )
 }

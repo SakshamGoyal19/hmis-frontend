@@ -15,8 +15,8 @@ const Navbar = ({isSideBarOpen, setSidebar}) => {
           <NavLinkItem><Link to="/" >Home</Link></NavLinkItem>
           <NavLinkItem><Link to="/about" >About</Link></NavLinkItem>
           <NavLinkItem><Link to="/department" >Department</Link></NavLinkItem>
-          <NavLinkItem>Doctors</NavLinkItem>
-          <NavLinkItem>Contact</NavLinkItem>
+          <NavLinkItem><Link to="/doctors" >Doctors</Link></NavLinkItem>
+          <NavLinkItem><Link to="/contact" >Contact</Link></NavLinkItem>
         </NavLinkContainer>
     </NavDiv>
     </>

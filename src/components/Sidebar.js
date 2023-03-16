@@ -8,8 +8,8 @@ const Sidebar = () => {
     <SideNavbar border={"1px solid black"} height={"92.75vh"} width={"16vw"} background={"#9B9B9A"} position={"fixed"}
     marginTop={"7vh"} display={"flex"}>
       <Link to="register"><Button bgColor={"#292926"} borderColor={"#292926"}> Register </Button></Link>
-      <Link to="admission"><Button bgColor={"#292926"} borderColor={"#292926"}> Admission </Button></Link>
       <Link to="getPatients"><Button bgColor={"#292926"} borderColor={"#292926"}> Patients </Button></Link>
+      <Link to="statusDashboard"><Button bgColor={"#292926"} borderColor={"#292926"}> Bed Status </Button></Link>
     </SideNavbar>
   )
 }

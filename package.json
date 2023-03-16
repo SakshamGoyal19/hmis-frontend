@@ -2,6 +2,7 @@
   "name": "hmis_project",
   "version": "0.1.0",
   "private": true,
+
   "dependencies": {
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
@@ -28,8 +29,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test ",
+    "eject": "react-scripts eject",
+    "coverage": "npm test --coverage"
   },
   "eslintConfig": {
     "extends": [

@@ -48,6 +48,7 @@ const GetPatients = () => {
       { field: 'unit', headerName: 'Unit' },
       { field: 'insured', headerName: 'Insured' },
       { field: 'reg_mode', headerName: 'Registration Mode' },
+      { field: 'patStatus', headerName: 'Admission Status' },
       {
         field: 'action',
         headerName: 'Actions',

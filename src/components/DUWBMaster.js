@@ -68,7 +68,7 @@ const Department = () => {
     .then((res) => {
       if(res){
         setRenderFlag(!renderFlag);
-        window.alert("Beds added successfully")
+        window.alert("Bed added successfully")
       }
       else
         window.alert("falied to add") 

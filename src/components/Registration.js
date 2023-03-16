@@ -8,7 +8,8 @@ const Registration = () => {
     event.preventDefault();
     const data = new FormData(event.target);
     const value = Object.fromEntries(data.entries());
-    console.log(value);
+    console.log(value.dob);
+    console.log((new Date()-new Date(value.dob))/(365*24*60*60*1000))
     fetch("http://localhost:8080/savePatient", {method: "POST",
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(value)})
