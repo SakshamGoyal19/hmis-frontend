@@ -9,6 +9,7 @@ import StatusDashboard from './components/StatusDashboard';
 import UpdatePatient from './components/UpdatePatient';
 import Doctors from './components/Doctors'
 import Contact from './components/Contact';
+import "./App.css";
 
 function App() {
 

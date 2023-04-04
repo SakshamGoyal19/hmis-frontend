@@ -9,8 +9,10 @@ export  const BedModal = (props) => {
   const [patDetails, setPatDetails] = React.useState();
 
   React.useEffect(() => {
-    axios.get(`getPatient/${props.hid}`)
-    .then((res) => setPatDetails(res.data))
+    if(props.hid !== undefined){
+      axios.get(`getPatient/${props.hid}`)
+      .then((res) => setPatDetails(res.data))
+    }
   })
 
     const style = {
@@ -35,7 +37,7 @@ export  const BedModal = (props) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            <b>{patDetails?.fname+" "+patDetails?.lname}</b>
+            <b><center>{patDetails?.fname+" "+patDetails?.lname}</center></b>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
 
